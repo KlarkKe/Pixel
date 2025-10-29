@@ -1,0 +1,12 @@
+{
+  "name": "Stunning Wind (Infinite Jump)",
+  "short_name": "Stunning Wind (Infinite Jump)",
+  "id": "com.example.jumpgame",
+  "description": "This template is an addictive endless jumping game. Players must guide their character through a vertical game space, leaping from platform to platform while avoiding obstacles. The game ends when you miss a platform and fall below the screen or if you run in to an obstalce. Along with the main game, this template features a main menu with character select, volume settings, credits, and more.",
+  "orientation": "portrait",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": []
+}
