@@ -22,6 +22,7 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
+gdjs.copyArray(runtimeScene.getObjects("BG_Preloader"), gdjs.PreloaderCode.GDBG_9595PreloaderObjects1);
 gdjs.copyArray(runtimeScene.getObjects("Loader"), gdjs.PreloaderCode.GDLoaderObjects1);
 gdjs.copyArray(runtimeScene.getObjects("ProgressBarka"), gdjs.PreloaderCode.GDProgressBarkaObjects1);
 {runtimeScene.getGame().getVariables().getFromIndex(1).setNumber(0);
@@ -35,6 +36,8 @@ gdjs.copyArray(runtimeScene.getObjects("ProgressBarka"), gdjs.PreloaderCode.GDPr
 }
 }
 {gdjs.evtTools.runtimeScene.resetTimer(runtimeScene, "LoaderTimer");
+}
+{gdjs.evtTools.camera.centerCamera(runtimeScene, (gdjs.PreloaderCode.GDBG_9595PreloaderObjects1.length !== 0 ? gdjs.PreloaderCode.GDBG_9595PreloaderObjects1[0] : null), true, "", 0);
 }
 }
 
