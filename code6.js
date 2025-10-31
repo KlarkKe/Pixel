@@ -9,6 +9,8 @@ gdjs.EndScreenCode.GDRestartButtonObjects1= [];
 gdjs.EndScreenCode.GDRestartButtonObjects2= [];
 gdjs.EndScreenCode.GDMenuButtonObjects1= [];
 gdjs.EndScreenCode.GDMenuButtonObjects2= [];
+gdjs.EndScreenCode.GDNewTextObjects1= [];
+gdjs.EndScreenCode.GDNewTextObjects2= [];
 
 
 gdjs.EndScreenCode.mapOfGDgdjs_9546EndScreenCode_9546GDMenuButtonObjects1Objects = Hashtable.newFrom({"MenuButton": gdjs.EndScreenCode.GDMenuButtonObjects1});
@@ -123,6 +125,8 @@ gdjs.EndScreenCode.GDRestartButtonObjects1.length = 0;
 gdjs.EndScreenCode.GDRestartButtonObjects2.length = 0;
 gdjs.EndScreenCode.GDMenuButtonObjects1.length = 0;
 gdjs.EndScreenCode.GDMenuButtonObjects2.length = 0;
+gdjs.EndScreenCode.GDNewTextObjects1.length = 0;
+gdjs.EndScreenCode.GDNewTextObjects2.length = 0;
 
 gdjs.EndScreenCode.eventsList3(runtimeScene);
 gdjs.EndScreenCode.GDBG_9595EndScreenObjects1.length = 0;
@@ -133,6 +137,8 @@ gdjs.EndScreenCode.GDRestartButtonObjects1.length = 0;
 gdjs.EndScreenCode.GDRestartButtonObjects2.length = 0;
 gdjs.EndScreenCode.GDMenuButtonObjects1.length = 0;
 gdjs.EndScreenCode.GDMenuButtonObjects2.length = 0;
+gdjs.EndScreenCode.GDNewTextObjects1.length = 0;
+gdjs.EndScreenCode.GDNewTextObjects2.length = 0;
 
 
 return;
