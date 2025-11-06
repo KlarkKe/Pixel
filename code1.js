@@ -93,7 +93,7 @@ isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 {gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2), false);
 }
-{gdjs.evtTools.network.sendAsyncRequest("https://mts-4.ru/score/" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(14).getChild("uid"))), "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(1), gdjs.VariablesContainer.badVariable);
+{gdjs.evtTools.network.sendAsyncRequest("https://mts-4.ru/score/" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(14).getChild("uid")), "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(1), gdjs.VariablesContainer.badVariable);
 }
 }
 
@@ -119,7 +119,7 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(runtimeScene.getObjects("score"), gdjs.MainCode.GDscoreObjects1);
 {for(var i = 0, len = gdjs.MainCode.GDscoreObjects1.length ;i < len;++i) {
-    gdjs.MainCode.GDscoreObjects1[i].getBehavior("Text").setText(runtimeScene.getGame().getVariables().getFromIndex(17).getChild(0).getChild("sc").getAsString());
+    gdjs.MainCode.GDscoreObjects1[i].getBehavior("Text").setText("");
 }
 }
 }

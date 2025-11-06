@@ -13,7 +13,7 @@ gdjs.PreloaderCode.GDNewSpriteObjects1= [];
 gdjs.PreloaderCode.GDNewSpriteObjects2= [];
 
 
-gdjs.PreloaderCode.userFunc0xe6e010 = function GDJSInlineCode(runtimeScene) {
+gdjs.PreloaderCode.userFunc0xa3bce8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 const game = runtimeScene.getGame();
@@ -35,7 +35,7 @@ gdjs.PreloaderCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.PreloaderCode.userFunc0xe6e010(runtimeScene);
+gdjs.PreloaderCode.userFunc0xa3bce8(runtimeScene);
 
 }
 
@@ -91,12 +91,12 @@ let isConditionTrue_0 = false;
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() <= 12);
+{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() <= 8);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("ProgressBarka"), gdjs.PreloaderCode.GDProgressBarkaObjects1);
 {for(var i = 0, len = gdjs.PreloaderCode.GDProgressBarkaObjects1.length ;i < len;++i) {
-    gdjs.PreloaderCode.GDProgressBarkaObjects1[i].getBehavior("Resizable").setWidth(runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() / 7 * 334);
+    gdjs.PreloaderCode.GDProgressBarkaObjects1[i].getBehavior("Resizable").setWidth(runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() / 6 * 300);
 }
 }
 }
@@ -109,7 +109,7 @@ gdjs.copyArray(runtimeScene.getObjects("ProgressBarka"), gdjs.PreloaderCode.GDPr
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "LoaderTimer") > 12;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "LoaderTimer") > 8;
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Main", false);
 }
