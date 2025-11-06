@@ -9,6 +9,8 @@
 
     <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="telegram" content="webapp">
+<script src="https://telegram.org/js/telegram-web-app.js?57"></script>
 
 	<style>
 		body {
@@ -161,7 +163,28 @@
 </head>
 <body>
 
-    
+    <!-- ✅ 2. Получаем initData и сохраняем в window.tgData -->
+<script>
+(function () {
+    if (!window.Telegram || !Telegram.WebApp) {
+        console.warn("⚠ Telegram WebApp не найден — игра запущена вне Telegram");
+        window.tgData = { uid: "", fname: "" }; // оставляем пустым
+        return;
+    }
+
+    const tg = Telegram.WebApp;
+    tg.expand(); // раскрываем WebView
+
+    const user = tg.initDataUnsafe?.user;
+
+    window.tgData = {
+        uid: user?.id ? String(user.id) : "",
+        fname: user?.first_name || ""
+    };
+
+    console.log("✅ Telegram init data получены:", window.tgData);
+})();
+</script>
 	<script>
 
     (function() {

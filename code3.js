@@ -720,7 +720,7 @@ for (var i = 0, k = 0, l = gdjs.GameCode.GDMaskDudeObjects2.length;i<l;++i) {
 gdjs.GameCode.GDMaskDudeObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15119596);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15147916);
 }
 }
 if (isConditionTrue_0) {
@@ -1021,7 +1021,7 @@ isConditionTrue_2 = false;
 }
 if (isConditionTrue_2) {
 isConditionTrue_2 = false;
-{isConditionTrue_2 = runtimeScene.getOnceTriggers().triggerOnce(15133780);
+{isConditionTrue_2 = runtimeScene.getOnceTriggers().triggerOnce(15100132);
 }
 }
 isConditionTrue_1 = isConditionTrue_2;
@@ -1175,36 +1175,38 @@ gdjs.GameCode.eventsList10(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.GameCode.asyncCallback15153084 = function (runtimeScene, asyncObjectsList) {
+};gdjs.GameCode.asyncCallback13728948 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.GameCode.localVariables);
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "EndScreen", false);
-}
 gdjs.GameCode.localVariables.length = 0;
 }
-gdjs.GameCode.idToCallbackMap.set(15153084, gdjs.GameCode.asyncCallback15153084);
-gdjs.GameCode.eventsList12 = function(runtimeScene) {
+gdjs.GameCode.idToCallbackMap.set(13728948, gdjs.GameCode.asyncCallback13728948);
+gdjs.GameCode.eventsList12 = function(runtimeScene, asyncObjectsList) {
 
 {
 
 
 {
+const parentAsyncObjectsList = asyncObjectsList;
 {
-const asyncObjectsList = new gdjs.LongLivedObjectsList();
+const asyncObjectsList = gdjs.LongLivedObjectsList.from(parentAsyncObjectsList);
 asyncObjectsList.backupLocalVariablesContainers(gdjs.GameCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.GameCode.asyncCallback15153084(runtimeScene, asyncObjectsList)), 15153084, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://mts-4.ru/score", "{\"uid\":\"test123\",\"fname\":\"Tester\",\"sc\":" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(14).getChild("sc"))) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.GameCode.asyncCallback13728948(runtimeScene, asyncObjectsList)), 13728948, asyncObjectsList);
 }
 }
 
 }
 
 
-};gdjs.GameCode.asyncCallback15154300 = function (runtimeScene, asyncObjectsList) {
+};gdjs.GameCode.asyncCallback14099012 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.GameCode.localVariables);
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "EndScreen", false);
 }
+
+{ //Subevents
+gdjs.GameCode.eventsList12(runtimeScene, asyncObjectsList);} //End of subevents
 gdjs.GameCode.localVariables.length = 0;
 }
-gdjs.GameCode.idToCallbackMap.set(15154300, gdjs.GameCode.asyncCallback15154300);
+gdjs.GameCode.idToCallbackMap.set(14099012, gdjs.GameCode.asyncCallback14099012);
 gdjs.GameCode.eventsList13 = function(runtimeScene) {
 
 {
@@ -1214,7 +1216,7 @@ gdjs.GameCode.eventsList13 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.GameCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.GameCode.asyncCallback15154300(runtimeScene, asyncObjectsList)), 15154300, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.GameCode.asyncCallback14099012(runtimeScene, asyncObjectsList)), 14099012, asyncObjectsList);
 }
 }
 
@@ -1226,49 +1228,11 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), 
 {
 
 
-
-}
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("Delete_Death_Marker"), gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects2);
-
 let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("HighScore")) < Math.floor(-(1) * ((( gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects2.length === 0 ) ? 0 :gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects2[0].getPointY("")) - gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("DeathStartPosition"))));
-if (isConditionTrue_0) {
-/* Reuse gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects2 */
-gdjs.copyArray(runtimeScene.getObjects("Distance"), gdjs.GameCode.GDDistanceObjects2);
-{gdjs.evtTools.storage.writeNumberInJSONFile("GameHighscore", "GameHighscore", Math.floor(-(1) * ((( gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects2.length === 0 ) ? 0 :gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects2[0].getPointY("")) - gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("DeathStartPosition")))));
-}
-{for(var i = 0, len = gdjs.GameCode.GDDistanceObjects2.length ;i < len;++i) {
-    gdjs.GameCode.GDDistanceObjects2[i].setColor("248;231;28");
-}
-}
-
-{ //Subevents
-gdjs.GameCode.eventsList12(runtimeScene);} //End of subevents
-}
-
-}
-
-
 {
-
-
-
+gdjs.copyArray(runtimeScene.getObjects("Distance"), gdjs.GameCode.GDDistanceObjects1);
+{runtimeScene.getGame().getVariables().getFromIndex(14).getChild("sc").setNumber(gdjs.evtTools.common.toNumber((( gdjs.GameCode.GDDistanceObjects1.length === 0 ) ? "" :gdjs.GameCode.GDDistanceObjects1[0].getString())));
 }
-
-
-{
-
-gdjs.copyArray(runtimeScene.getObjects("Delete_Death_Marker"), gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects1);
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("HighScore")) >= Math.floor(-(1) * ((( gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects1.length === 0 ) ? 0 :gdjs.GameCode.GDDelete_9595Death_9595MarkerObjects1[0].getPointY("")) - gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("DeathStartPosition"))));
-if (isConditionTrue_0) {
 
 { //Subevents
 gdjs.GameCode.eventsList13(runtimeScene);} //End of subevents
@@ -1287,7 +1251,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getScene().getVariables().getFromIndex(0)) == "GameOver";
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15149556);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(13223068);
 }
 }
 if (isConditionTrue_0) {
@@ -1373,7 +1337,7 @@ for (var i = 0, k = 0, l = gdjs.GameCode.GDSegmentMarkerObjects2.length;i<l;++i)
 gdjs.GameCode.GDSegmentMarkerObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15103284);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15110820);
 }
 }
 if (isConditionTrue_0) {

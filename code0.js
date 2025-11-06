@@ -13,7 +13,34 @@ gdjs.PreloaderCode.GDNewSpriteObjects1= [];
 gdjs.PreloaderCode.GDNewSpriteObjects2= [];
 
 
+gdjs.PreloaderCode.userFunc0xd07cf0 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+runtimeScene.setBackgroundColor(100,100,240);
+const game = runtimeScene.getGame();
+const playerData = game.getVariables().get("PlayerData");
+
+// устанавливаем uid и fname из Telegram (если Telegram доступен)
+if (window.tgData) {
+  playerData.getChild("uid").setString(window.tgData.uid || "");
+  playerData.getChild("fname").setString(window.tgData.fname || "");
+}
+
+// score на старте = 0 (если не загружали ранее)
+playerData.getChild("sc").setNumber(0);
+
+
+};
 gdjs.PreloaderCode.eventsList0 = function(runtimeScene) {
+
+{
+
+
+gdjs.PreloaderCode.userFunc0xd07cf0(runtimeScene);
+
+}
+
+
+};gdjs.PreloaderCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -39,6 +66,9 @@ gdjs.copyArray(runtimeScene.getObjects("ProgressBarka"), gdjs.PreloaderCode.GDPr
 }
 {gdjs.evtTools.camera.centerCamera(runtimeScene, (gdjs.PreloaderCode.GDBG_9595PreloaderObjects1.length !== 0 ? gdjs.PreloaderCode.GDBG_9595PreloaderObjects1[0] : null), true, "", 0);
 }
+
+{ //Subevents
+gdjs.PreloaderCode.eventsList0(runtimeScene);} //End of subevents
 }
 
 }
@@ -114,7 +144,7 @@ gdjs.PreloaderCode.GDLoaderObjects2.length = 0;
 gdjs.PreloaderCode.GDNewSpriteObjects1.length = 0;
 gdjs.PreloaderCode.GDNewSpriteObjects2.length = 0;
 
-gdjs.PreloaderCode.eventsList0(runtimeScene);
+gdjs.PreloaderCode.eventsList1(runtimeScene);
 gdjs.PreloaderCode.GDProgressBarkaObjects1.length = 0;
 gdjs.PreloaderCode.GDProgressBarkaObjects2.length = 0;
 gdjs.PreloaderCode.GDBG_9595ProgressBarObjects1.length = 0;
