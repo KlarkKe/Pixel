@@ -1190,7 +1190,7 @@ const parentAsyncObjectsList = asyncObjectsList;
 {
 const asyncObjectsList = gdjs.LongLivedObjectsList.from(parentAsyncObjectsList);
 asyncObjectsList.backupLocalVariablesContainers(gdjs.GameCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://mts-4.ru/score", "{\"uid\":\"test123\",\"fname\":\"Tester\",\"sc\":" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(14).getChild("sc"))) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.GameCode.asyncCallback13728948(runtimeScene, asyncObjectsList)), 13728948, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("https://mts-4.ru/score", "{\"uid\":\"" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(14).getChild("uid")) + "\",\"fname\":\"" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(14).getChild("fname")) + "\",\"sc\":" + gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(14).getChild("sc"))) + "}", "POST", "application/json", gdjs.VariablesContainer.badVariable, gdjs.VariablesContainer.badVariable), (runtimeScene) => (gdjs.GameCode.asyncCallback13728948(runtimeScene, asyncObjectsList)), 13728948, asyncObjectsList);
 }
 }
 

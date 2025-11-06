@@ -13,7 +13,7 @@ gdjs.PreloaderCode.GDNewSpriteObjects1= [];
 gdjs.PreloaderCode.GDNewSpriteObjects2= [];
 
 
-gdjs.PreloaderCode.userFunc0xd07cf0 = function GDJSInlineCode(runtimeScene) {
+gdjs.PreloaderCode.userFunc0xe6e010 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 runtimeScene.setBackgroundColor(100,100,240);
 const game = runtimeScene.getGame();
@@ -35,7 +35,7 @@ gdjs.PreloaderCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.PreloaderCode.userFunc0xd07cf0(runtimeScene);
+gdjs.PreloaderCode.userFunc0xe6e010(runtimeScene);
 
 }
 
