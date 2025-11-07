@@ -15,20 +15,20 @@ gdjs.MainCode.GDLeaderboardButtonObjects1= [];
 gdjs.MainCode.GDLeaderboardButtonObjects2= [];
 gdjs.MainCode.GDPlayButtonObjects1= [];
 gdjs.MainCode.GDPlayButtonObjects2= [];
-gdjs.MainCode.GDroolObjects1= [];
-gdjs.MainCode.GDroolObjects2= [];
-gdjs.MainCode.GDleaderboardObjects1= [];
-gdjs.MainCode.GDleaderboardObjects2= [];
-gdjs.MainCode.GDplayObjects1= [];
-gdjs.MainCode.GDplayObjects2= [];
+gdjs.MainCode.GDNewTextObjects1= [];
+gdjs.MainCode.GDNewTextObjects2= [];
+gdjs.MainCode.GDNewText2Objects1= [];
+gdjs.MainCode.GDNewText2Objects2= [];
+gdjs.MainCode.GDNewText3Objects1= [];
+gdjs.MainCode.GDNewText3Objects2= [];
 gdjs.MainCode.GDNewSpriteObjects1= [];
 gdjs.MainCode.GDNewSpriteObjects2= [];
 gdjs.MainCode.GDNewSprite2Objects1= [];
 gdjs.MainCode.GDNewSprite2Objects2= [];
 gdjs.MainCode.GDNewSprite4Objects1= [];
 gdjs.MainCode.GDNewSprite4Objects2= [];
-gdjs.MainCode.GDscoreObjects1= [];
-gdjs.MainCode.GDscoreObjects2= [];
+gdjs.MainCode.GDScoreTextObjects1= [];
+gdjs.MainCode.GDScoreTextObjects2= [];
 
 
 gdjs.MainCode.mapOfGDgdjs_9546MainCode_9546GDRoolsButtonObjects1Objects = Hashtable.newFrom({"RoolsButton": gdjs.MainCode.GDRoolsButtonObjects1});
@@ -105,21 +105,11 @@ if (isConditionTrue_0) {
 
 let isConditionTrue_0 = false;
 {
+gdjs.copyArray(runtimeScene.getObjects("ScoreText"), gdjs.MainCode.GDScoreTextObjects1);
 {gdjs.evtTools.network.jsonToVariableStructure(runtimeScene.getScene().getVariables().getFromIndex(1).getAsString(), runtimeScene.getGame().getVariables().getFromIndex(17));
 }
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-{
-gdjs.copyArray(runtimeScene.getObjects("score"), gdjs.MainCode.GDscoreObjects1);
-{for(var i = 0, len = gdjs.MainCode.GDscoreObjects1.length ;i < len;++i) {
-    gdjs.MainCode.GDscoreObjects1[i].getBehavior("Text").setText(gdjs.evtTools.common.toString(gdjs.evtTools.variable.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(17).getChild("score"))));
+{for(var i = 0, len = gdjs.MainCode.GDScoreTextObjects1.length ;i < len;++i) {
+    gdjs.MainCode.GDScoreTextObjects1[i].getBehavior("Text").setText(runtimeScene.getGame().getVariables().getFromIndex(17).getChild("score").getAsString());
 }
 }
 }
@@ -194,20 +184,20 @@ gdjs.MainCode.GDLeaderboardButtonObjects1.length = 0;
 gdjs.MainCode.GDLeaderboardButtonObjects2.length = 0;
 gdjs.MainCode.GDPlayButtonObjects1.length = 0;
 gdjs.MainCode.GDPlayButtonObjects2.length = 0;
-gdjs.MainCode.GDroolObjects1.length = 0;
-gdjs.MainCode.GDroolObjects2.length = 0;
-gdjs.MainCode.GDleaderboardObjects1.length = 0;
-gdjs.MainCode.GDleaderboardObjects2.length = 0;
-gdjs.MainCode.GDplayObjects1.length = 0;
-gdjs.MainCode.GDplayObjects2.length = 0;
+gdjs.MainCode.GDNewTextObjects1.length = 0;
+gdjs.MainCode.GDNewTextObjects2.length = 0;
+gdjs.MainCode.GDNewText2Objects1.length = 0;
+gdjs.MainCode.GDNewText2Objects2.length = 0;
+gdjs.MainCode.GDNewText3Objects1.length = 0;
+gdjs.MainCode.GDNewText3Objects2.length = 0;
 gdjs.MainCode.GDNewSpriteObjects1.length = 0;
 gdjs.MainCode.GDNewSpriteObjects2.length = 0;
 gdjs.MainCode.GDNewSprite2Objects1.length = 0;
 gdjs.MainCode.GDNewSprite2Objects2.length = 0;
 gdjs.MainCode.GDNewSprite4Objects1.length = 0;
 gdjs.MainCode.GDNewSprite4Objects2.length = 0;
-gdjs.MainCode.GDscoreObjects1.length = 0;
-gdjs.MainCode.GDscoreObjects2.length = 0;
+gdjs.MainCode.GDScoreTextObjects1.length = 0;
+gdjs.MainCode.GDScoreTextObjects2.length = 0;
 
 gdjs.MainCode.eventsList3(runtimeScene);
 gdjs.MainCode.GDCloudLeftObjects1.length = 0;
@@ -224,20 +214,20 @@ gdjs.MainCode.GDLeaderboardButtonObjects1.length = 0;
 gdjs.MainCode.GDLeaderboardButtonObjects2.length = 0;
 gdjs.MainCode.GDPlayButtonObjects1.length = 0;
 gdjs.MainCode.GDPlayButtonObjects2.length = 0;
-gdjs.MainCode.GDroolObjects1.length = 0;
-gdjs.MainCode.GDroolObjects2.length = 0;
-gdjs.MainCode.GDleaderboardObjects1.length = 0;
-gdjs.MainCode.GDleaderboardObjects2.length = 0;
-gdjs.MainCode.GDplayObjects1.length = 0;
-gdjs.MainCode.GDplayObjects2.length = 0;
+gdjs.MainCode.GDNewTextObjects1.length = 0;
+gdjs.MainCode.GDNewTextObjects2.length = 0;
+gdjs.MainCode.GDNewText2Objects1.length = 0;
+gdjs.MainCode.GDNewText2Objects2.length = 0;
+gdjs.MainCode.GDNewText3Objects1.length = 0;
+gdjs.MainCode.GDNewText3Objects2.length = 0;
 gdjs.MainCode.GDNewSpriteObjects1.length = 0;
 gdjs.MainCode.GDNewSpriteObjects2.length = 0;
 gdjs.MainCode.GDNewSprite2Objects1.length = 0;
 gdjs.MainCode.GDNewSprite2Objects2.length = 0;
 gdjs.MainCode.GDNewSprite4Objects1.length = 0;
 gdjs.MainCode.GDNewSprite4Objects2.length = 0;
-gdjs.MainCode.GDscoreObjects1.length = 0;
-gdjs.MainCode.GDscoreObjects2.length = 0;
+gdjs.MainCode.GDScoreTextObjects1.length = 0;
+gdjs.MainCode.GDScoreTextObjects2.length = 0;
 
 
 return;

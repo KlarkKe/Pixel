@@ -93,7 +93,6 @@
 	<script src="gdjs-evtsext__buttonstates__buttonfsm.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__centeringobject__centering.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__gamefunctions__playerdeathanimation-func.js" crossorigin="anonymous"></script>
-	<script src="gdjs-evtsext__panelspritecontinuousbar__panelspritecontinuousbar.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__panelspritecontinuousbar__resourcebar.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__panelspriteslider__buttonfsm.js" crossorigin="anonymous"></script>
 	<script src="gdjs-evtsext__panelspriteslider__slider.js" crossorigin="anonymous"></script>
@@ -165,25 +164,23 @@
 
     <script>
 (function () {
-  if (!window.Telegram || !Telegram.WebApp) {
-    console.warn("🚫 Telegram WebApp не найден");
-    window.tgData = { uid: "", fname: "", chatId: "" };
-    return;
-  }
+    if (!window.Telegram || !Telegram.WebApp) {
+        console.warn("⚠ Telegram WebApp не найден — игра запущена вне Telegram");
+        window.tgData = { uid: "", fname: "" }; // оставляем пустым
+        return;
+    }
 
-  const tg = Telegram.WebApp;
-  tg.expand();
+    const tg = Telegram.WebApp;
+    tg.expand(); // раскрываем WebView
 
-  const user = tg.initDataUnsafe?.user;
-  const chat = tg.initDataUnsafe?.chat;
+    const user = tg.initDataUnsafe?.user;
 
-  window.tgData = {
-    uid: user?.id ? String(user.id) : "",
-    fname: user?.first_name || "",
-    chatId: chat?.id ? String(chat.id) : ""
-  };
+    window.tgData = {
+        uid: user?.id ? String(user.id) : "",
+        fname: user?.first_name || ""
+    };
 
-  console.log("✅ Telegram initData:", window.tgData);
+    console.log("✅ Telegram init data получены:", window.tgData);
 })();
 </script>
 	<script>

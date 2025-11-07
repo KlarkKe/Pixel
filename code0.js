@@ -11,37 +11,54 @@ gdjs.PreloaderCode.GDLoaderObjects1= [];
 gdjs.PreloaderCode.GDLoaderObjects2= [];
 gdjs.PreloaderCode.GDNewSpriteObjects1= [];
 gdjs.PreloaderCode.GDNewSpriteObjects2= [];
-gdjs.PreloaderCode.GDCopperRedBarObjects1= [];
-gdjs.PreloaderCode.GDCopperRedBarObjects2= [];
+gdjs.PreloaderCode.GDNewTextObjects1= [];
+gdjs.PreloaderCode.GDNewTextObjects2= [];
 
 
-gdjs.PreloaderCode.userFunc0xebd760 = function GDJSInlineCode(runtimeScene) {
+gdjs.PreloaderCode.userFunc0xe70130 = function GDJSInlineCode(runtimeScene) {
 "use strict";
-runtimeScene.setBackgroundColor(100,100,240);
-const game = runtimeScene.getGame();
-const playerData = game.getVariables().get("PlayerData");
+(function(runtimeScene) {
+    const game = runtimeScene.getGame();
+    const playerData = game.getVariables().get("PlayerData");
 
-if (window.tgData) {
-  playerData.getChild("uid").setString(window.tgData.uid || "");
-  playerData.getChild("fname").setString(window.tgData.fname || "");
-  playerData.getChild("chatId").setString(window.tgData.chatId || "");
-}
+    // Если уже заполнено (чтобы не перезаписывать при перезапуске сцены):
+    if (playerData.getChild("uid").getAsString() !== "") return;
 
-playerData.getChild("sc").setNumber(0);
+    // Значения по умолчанию
+    let uid = "";
+    let fname = "";
 
+    // 1. Берём из Telegram WebApp initDataUnsafe
+    if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
+        const user = window.Telegram.WebApp.initDataUnsafe.user;
+        if (user) {
+            uid = String(user.id || "");
+            fname = String(user.first_name || "");
+        }
+    }
+
+    // 2. Если ты вручную добавлял window.tgData (fallback)
+    if (!uid && window.tgData && window.tgData.uid) {
+        uid = String(window.tgData.uid);
+    }
+    if (!fname && window.tgData && window.tgData.first_name) {
+        fname = String(window.tgData.first_name);
+    }
+
+    // 3. Записываем в глобальные переменные
+    playerData.getChild("uid").setString(uid);
+    playerData.getChild("fname").setString(fname);
+    // chatId из initData не приходит — оставляем пустым
+    playerData.getChild("chatId").setString("");
+
+    // 4. Если нет поля sc — создаём
+    if (!playerData.hasChild("sc")) {
+        playerData.getChild("sc").setNumber(0);
+    }
+})(runtimeScene);
 
 };
 gdjs.PreloaderCode.eventsList0 = function(runtimeScene) {
-
-{
-
-
-gdjs.PreloaderCode.userFunc0xebd760(runtimeScene);
-
-}
-
-
-};gdjs.PreloaderCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -67,9 +84,6 @@ gdjs.copyArray(runtimeScene.getObjects("ProgressBarka"), gdjs.PreloaderCode.GDPr
 }
 {gdjs.evtTools.camera.centerCamera(runtimeScene, (gdjs.PreloaderCode.GDBG_9595PreloaderObjects1.length !== 0 ? gdjs.PreloaderCode.GDBG_9595PreloaderObjects1[0] : null), true, "", 0);
 }
-
-{ //Subevents
-gdjs.PreloaderCode.eventsList0(runtimeScene);} //End of subevents
 }
 
 }
@@ -92,12 +106,12 @@ let isConditionTrue_0 = false;
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() <= 7);
+{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() <= 12);
 }
 if (isConditionTrue_0) {
 gdjs.copyArray(runtimeScene.getObjects("ProgressBarka"), gdjs.PreloaderCode.GDProgressBarkaObjects1);
 {for(var i = 0, len = gdjs.PreloaderCode.GDProgressBarkaObjects1.length ;i < len;++i) {
-    gdjs.PreloaderCode.GDProgressBarkaObjects1[i].getBehavior("Resizable").setWidth(runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() / 6 * 300);
+    gdjs.PreloaderCode.GDProgressBarkaObjects1[i].getBehavior("Resizable").setWidth(runtimeScene.getGame().getVariables().getFromIndex(1).getAsNumber() / 7 * 334);
 }
 }
 }
@@ -110,7 +124,7 @@ gdjs.copyArray(runtimeScene.getObjects("ProgressBarka"), gdjs.PreloaderCode.GDPr
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "LoaderTimer") > 7;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.getTimerElapsedTimeInSecondsOrNaN(runtimeScene, "LoaderTimer") > 12;
 if (isConditionTrue_0) {
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Main", false);
 }
@@ -125,6 +139,14 @@ if (isConditionTrue_0) {
 let isConditionTrue_0 = false;
 {
 }
+
+}
+
+
+{
+
+
+gdjs.PreloaderCode.userFunc0xe70130(runtimeScene);
 
 }
 
@@ -144,10 +166,10 @@ gdjs.PreloaderCode.GDLoaderObjects1.length = 0;
 gdjs.PreloaderCode.GDLoaderObjects2.length = 0;
 gdjs.PreloaderCode.GDNewSpriteObjects1.length = 0;
 gdjs.PreloaderCode.GDNewSpriteObjects2.length = 0;
-gdjs.PreloaderCode.GDCopperRedBarObjects1.length = 0;
-gdjs.PreloaderCode.GDCopperRedBarObjects2.length = 0;
+gdjs.PreloaderCode.GDNewTextObjects1.length = 0;
+gdjs.PreloaderCode.GDNewTextObjects2.length = 0;
 
-gdjs.PreloaderCode.eventsList1(runtimeScene);
+gdjs.PreloaderCode.eventsList0(runtimeScene);
 gdjs.PreloaderCode.GDProgressBarkaObjects1.length = 0;
 gdjs.PreloaderCode.GDProgressBarkaObjects2.length = 0;
 gdjs.PreloaderCode.GDBG_9595ProgressBarObjects1.length = 0;
@@ -158,8 +180,8 @@ gdjs.PreloaderCode.GDLoaderObjects1.length = 0;
 gdjs.PreloaderCode.GDLoaderObjects2.length = 0;
 gdjs.PreloaderCode.GDNewSpriteObjects1.length = 0;
 gdjs.PreloaderCode.GDNewSpriteObjects2.length = 0;
-gdjs.PreloaderCode.GDCopperRedBarObjects1.length = 0;
-gdjs.PreloaderCode.GDCopperRedBarObjects2.length = 0;
+gdjs.PreloaderCode.GDNewTextObjects1.length = 0;
+gdjs.PreloaderCode.GDNewTextObjects2.length = 0;
 
 
 return;
