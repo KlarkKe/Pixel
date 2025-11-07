@@ -15,46 +15,27 @@ gdjs.PreloaderCode.GDNewTextObjects1= [];
 gdjs.PreloaderCode.GDNewTextObjects2= [];
 
 
-gdjs.PreloaderCode.userFunc0xfaac88 = function GDJSInlineCode(runtimeScene) {
+gdjs.PreloaderCode.userFunc0xb8f848 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 (function(runtimeScene) {
-    const game = runtimeScene.getGame();
-    const playerData = game.getVariables().get("PlayerData");
+  // Получаем глобальные переменные
+  const game = runtimeScene.getGame();
+  const playerData = game.getVariables().get("PlayerData");
 
-    // Если уже заполнено (чтобы не перезаписывать при перезапуске сцены):
-    if (playerData.getChild("uid").getAsString() !== "") return;
+  // Если Telegram из index.html передал данные
+  if (window.tgData) {
+    playerData.getChild("uid").setString(window.tgData.uid || "");
+    playerData.getChild("fname").setString(window.tgData.fname || "");
+  } else {
+    // Если игра не в Telegram — ставим пустое
+    playerData.getChild("uid").setString("");
+    playerData.getChild("fname").setString("");
+  }
 
-    // Значения по умолчанию
-    let uid = "";
-    let fname = "";
-
-    // 1. Берём из Telegram WebApp initDataUnsafe
-    if (window.Telegram && window.Telegram.WebApp && window.Telegram.WebApp.initDataUnsafe) {
-        const user = window.Telegram.WebApp.initDataUnsafe.user;
-        if (user) {
-            uid = String(user.id || "");
-            fname = String(user.first_name || "");
-        }
-    }
-
-    // 2. Если ты вручную добавлял window.tgData (fallback)
-    if (!uid && window.tgData && window.tgData.uid) {
-        uid = String(window.tgData.uid);
-    }
-    if (!fname && window.tgData && window.tgData.first_name) {
-        fname = String(window.tgData.first_name);
-    }
-
-    // 3. Записываем в глобальные переменные
-    playerData.getChild("uid").setString(uid);
-    playerData.getChild("fname").setString(fname);
-    // chatId из initData не приходит — оставляем пустым
-    playerData.getChild("chatId").setString("");
-
-    // 4. Если нет поля sc — создаём
-    if (!playerData.hasChild("sc")) {
-        playerData.getChild("sc").setNumber(0);
-    }
+  console.log("✅ PlayerData:", {
+    uid: playerData.getChild("uid").getAsString(),
+    fname: playerData.getChild("fname").getAsString()
+  });
 })(runtimeScene);
 
 };
@@ -146,7 +127,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.PreloaderCode.userFunc0xfaac88(runtimeScene);
+gdjs.PreloaderCode.userFunc0xb8f848(runtimeScene);
 
 }
 
