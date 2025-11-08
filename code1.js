@@ -23,6 +23,12 @@ gdjs.MainCode.GDNewText3Objects1= [];
 gdjs.MainCode.GDNewText3Objects2= [];
 gdjs.MainCode.GDNewSpriteObjects1= [];
 gdjs.MainCode.GDNewSpriteObjects2= [];
+gdjs.MainCode.GDNewSprite2Objects1= [];
+gdjs.MainCode.GDNewSprite2Objects2= [];
+gdjs.MainCode.GDNewSprite4Objects1= [];
+gdjs.MainCode.GDNewSprite4Objects2= [];
+gdjs.MainCode.GDScoreTextObjects1= [];
+gdjs.MainCode.GDScoreTextObjects2= [];
 
 
 gdjs.MainCode.mapOfGDgdjs_9546MainCode_9546GDRoolsButtonObjects1Objects = Hashtable.newFrom({"RoolsButton": gdjs.MainCode.GDRoolsButtonObjects1});
@@ -86,6 +92,25 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
 {gdjs.evtTools.variable.setVariableBoolean(runtimeScene.getGame().getVariables().getFromIndex(2), false);
+}
+{gdjs.evtTools.network.sendAsyncRequest("https://mts-4.ru/score/" + gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(14).getChild("uid")), "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(1), gdjs.VariablesContainer.badVariable);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+gdjs.copyArray(runtimeScene.getObjects("ScoreText"), gdjs.MainCode.GDScoreTextObjects1);
+{gdjs.evtTools.network.jsonToVariableStructure(runtimeScene.getScene().getVariables().getFromIndex(1).getAsString(), runtimeScene.getGame().getVariables().getFromIndex(17));
+}
+{for(var i = 0, len = gdjs.MainCode.GDScoreTextObjects1.length ;i < len;++i) {
+    gdjs.MainCode.GDScoreTextObjects1[i].getBehavior("Text").setText(runtimeScene.getGame().getVariables().getFromIndex(17).getChild("score").getAsString());
+}
 }
 }
 
@@ -167,6 +192,12 @@ gdjs.MainCode.GDNewText3Objects1.length = 0;
 gdjs.MainCode.GDNewText3Objects2.length = 0;
 gdjs.MainCode.GDNewSpriteObjects1.length = 0;
 gdjs.MainCode.GDNewSpriteObjects2.length = 0;
+gdjs.MainCode.GDNewSprite2Objects1.length = 0;
+gdjs.MainCode.GDNewSprite2Objects2.length = 0;
+gdjs.MainCode.GDNewSprite4Objects1.length = 0;
+gdjs.MainCode.GDNewSprite4Objects2.length = 0;
+gdjs.MainCode.GDScoreTextObjects1.length = 0;
+gdjs.MainCode.GDScoreTextObjects2.length = 0;
 
 gdjs.MainCode.eventsList3(runtimeScene);
 gdjs.MainCode.GDCloudLeftObjects1.length = 0;
@@ -191,6 +222,12 @@ gdjs.MainCode.GDNewText3Objects1.length = 0;
 gdjs.MainCode.GDNewText3Objects2.length = 0;
 gdjs.MainCode.GDNewSpriteObjects1.length = 0;
 gdjs.MainCode.GDNewSpriteObjects2.length = 0;
+gdjs.MainCode.GDNewSprite2Objects1.length = 0;
+gdjs.MainCode.GDNewSprite2Objects2.length = 0;
+gdjs.MainCode.GDNewSprite4Objects1.length = 0;
+gdjs.MainCode.GDNewSprite4Objects2.length = 0;
+gdjs.MainCode.GDScoreTextObjects1.length = 0;
+gdjs.MainCode.GDScoreTextObjects2.length = 0;
 
 
 return;

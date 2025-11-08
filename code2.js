@@ -325,7 +325,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.CharacterSelectionCode.mapOfGDgdjs_9546CharacterSelectionCode_9546GDChooseButtonObjects2Objects, runtimeScene, true, false);
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15061156);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15168956);
 }
 }
 if (isConditionTrue_0) {

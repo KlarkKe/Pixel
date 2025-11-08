@@ -5,10 +5,23 @@ gdjs.LeaderboardCode.GDNewSpriteObjects1= [];
 gdjs.LeaderboardCode.GDNewSpriteObjects2= [];
 gdjs.LeaderboardCode.GDNewSprite2Objects1= [];
 gdjs.LeaderboardCode.GDNewSprite2Objects2= [];
+gdjs.LeaderboardCode.GDNewTextObjects1= [];
+gdjs.LeaderboardCode.GDNewTextObjects2= [];
+gdjs.LeaderboardCode.GDPlayerNameTextObjects1= [];
+gdjs.LeaderboardCode.GDPlayerNameTextObjects2= [];
+gdjs.LeaderboardCode.GDPlayerScoreTextObjects1= [];
+gdjs.LeaderboardCode.GDPlayerScoreTextObjects2= [];
+gdjs.LeaderboardCode.GDLineObjects1= [];
+gdjs.LeaderboardCode.GDLineObjects2= [];
 
 
-gdjs.LeaderboardCode.mapOfGDgdjs_9546LeaderboardCode_9546GDNewSprite2Objects1Objects = Hashtable.newFrom({"NewSprite2": gdjs.LeaderboardCode.GDNewSprite2Objects1});
+gdjs.LeaderboardCode.mapOfGDgdjs_9546LeaderboardCode_9546GDPlayerNameTextObjects2Objects = Hashtable.newFrom({"PlayerNameText": gdjs.LeaderboardCode.GDPlayerNameTextObjects2});
+gdjs.LeaderboardCode.mapOfGDgdjs_9546LeaderboardCode_9546GDPlayerScoreTextObjects2Objects = Hashtable.newFrom({"PlayerScoreText": gdjs.LeaderboardCode.GDPlayerScoreTextObjects2});
+gdjs.LeaderboardCode.mapOfGDgdjs_9546LeaderboardCode_9546GDLineObjects2Objects = Hashtable.newFrom({"Line": gdjs.LeaderboardCode.GDLineObjects2});
 gdjs.LeaderboardCode.eventsList0 = function(runtimeScene) {
+
+};gdjs.LeaderboardCode.mapOfGDgdjs_9546LeaderboardCode_9546GDNewSprite2Objects1Objects = Hashtable.newFrom({"NewSprite2": gdjs.LeaderboardCode.GDNewSprite2Objects1});
+gdjs.LeaderboardCode.eventsList1 = function(runtimeScene) {
 
 {
 
@@ -24,7 +37,75 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.LeaderboardCode.eventsList1 = function(runtimeScene) {
+};gdjs.LeaderboardCode.eventsList2 = function(runtimeScene) {
+
+{
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
+if (isConditionTrue_0) {
+{gdjs.evtTools.network.sendAsyncRequest("https://mts-4.ru/top", "", "GET", "", runtimeScene.getScene().getVariables().getFromIndex(0), gdjs.VariablesContainer.badVariable);
+}
+{runtimeScene.getGame().getVariables().getFromIndex(16).setNumber(0);
+}
+}
+
+}
+
+
+{
+
+
+let isConditionTrue_0 = false;
+{
+{gdjs.evtTools.network.jsonToVariableStructure(runtimeScene.getScene().getVariables().getFromIndex(0).getAsString(), runtimeScene.getGame().getVariables().getFromIndex(15));
+}
+}
+
+}
+
+
+{
+
+
+const repeatCount2 = gdjs.evtTools.variable.getVariableChildCount(runtimeScene.getGame().getVariables().getFromIndex(15));
+for (let repeatIndex2 = 0;repeatIndex2 < repeatCount2;++repeatIndex2) {
+gdjs.LeaderboardCode.GDLineObjects2.length = 0;
+
+gdjs.LeaderboardCode.GDPlayerNameTextObjects2.length = 0;
+
+gdjs.LeaderboardCode.GDPlayerScoreTextObjects2.length = 0;
+
+
+let isConditionTrue_0 = false;
+isConditionTrue_0 = false;
+{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(16).getAsNumber() < 10);
+}
+if (isConditionTrue_0)
+{
+{gdjs.evtTools.object.createObjectOnScene(runtimeScene, gdjs.LeaderboardCode.mapOfGDgdjs_9546LeaderboardCode_9546GDPlayerNameTextObjects2Objects, 42, 230 + runtimeScene.getGame().getVariables().getFromIndex(16).getAsNumber() * 100, "");
+}
+{gdjs.evtTools.object.createObjectOnScene(runtimeScene, gdjs.LeaderboardCode.mapOfGDgdjs_9546LeaderboardCode_9546GDPlayerScoreTextObjects2Objects, 500, 230 + runtimeScene.getGame().getVariables().getFromIndex(16).getAsNumber() * 100, "");
+}
+{gdjs.evtTools.object.createObjectOnScene(runtimeScene, gdjs.LeaderboardCode.mapOfGDgdjs_9546LeaderboardCode_9546GDLineObjects2Objects, 42, 230 + runtimeScene.getGame().getVariables().getFromIndex(16).getAsNumber() * 100, "");
+}
+{for(var i = 0, len = gdjs.LeaderboardCode.GDPlayerNameTextObjects2.length ;i < len;++i) {
+    gdjs.LeaderboardCode.GDPlayerNameTextObjects2[i].getBehavior("Text").setText(runtimeScene.getGame().getVariables().getFromIndex(15).getChild(runtimeScene.getGame().getVariables().getFromIndex(16).getAsNumber()).getChild("fname").getAsString());
+}
+}
+{for(var i = 0, len = gdjs.LeaderboardCode.GDPlayerScoreTextObjects2.length ;i < len;++i) {
+    gdjs.LeaderboardCode.GDPlayerScoreTextObjects2[i].getBehavior("Text").setText(runtimeScene.getGame().getVariables().getFromIndex(15).getChild(runtimeScene.getGame().getVariables().getFromIndex(16).getAsNumber()).getChild("sc").getAsString());
+}
+}
+{runtimeScene.getGame().getVariables().getFromIndex(16).add(1);
+}
+}
+}
+
+}
+
 
 {
 
@@ -36,7 +117,7 @@ isConditionTrue_0 = gdjs.evtTools.input.cursorOnObject(gdjs.LeaderboardCode.mapO
 if (isConditionTrue_0) {
 
 { //Subevents
-gdjs.LeaderboardCode.eventsList0(runtimeScene);} //End of subevents
+gdjs.LeaderboardCode.eventsList1(runtimeScene);} //End of subevents
 }
 
 }
@@ -51,12 +132,28 @@ gdjs.LeaderboardCode.GDNewSpriteObjects1.length = 0;
 gdjs.LeaderboardCode.GDNewSpriteObjects2.length = 0;
 gdjs.LeaderboardCode.GDNewSprite2Objects1.length = 0;
 gdjs.LeaderboardCode.GDNewSprite2Objects2.length = 0;
+gdjs.LeaderboardCode.GDNewTextObjects1.length = 0;
+gdjs.LeaderboardCode.GDNewTextObjects2.length = 0;
+gdjs.LeaderboardCode.GDPlayerNameTextObjects1.length = 0;
+gdjs.LeaderboardCode.GDPlayerNameTextObjects2.length = 0;
+gdjs.LeaderboardCode.GDPlayerScoreTextObjects1.length = 0;
+gdjs.LeaderboardCode.GDPlayerScoreTextObjects2.length = 0;
+gdjs.LeaderboardCode.GDLineObjects1.length = 0;
+gdjs.LeaderboardCode.GDLineObjects2.length = 0;
 
-gdjs.LeaderboardCode.eventsList1(runtimeScene);
+gdjs.LeaderboardCode.eventsList2(runtimeScene);
 gdjs.LeaderboardCode.GDNewSpriteObjects1.length = 0;
 gdjs.LeaderboardCode.GDNewSpriteObjects2.length = 0;
 gdjs.LeaderboardCode.GDNewSprite2Objects1.length = 0;
 gdjs.LeaderboardCode.GDNewSprite2Objects2.length = 0;
+gdjs.LeaderboardCode.GDNewTextObjects1.length = 0;
+gdjs.LeaderboardCode.GDNewTextObjects2.length = 0;
+gdjs.LeaderboardCode.GDPlayerNameTextObjects1.length = 0;
+gdjs.LeaderboardCode.GDPlayerNameTextObjects2.length = 0;
+gdjs.LeaderboardCode.GDPlayerScoreTextObjects1.length = 0;
+gdjs.LeaderboardCode.GDPlayerScoreTextObjects2.length = 0;
+gdjs.LeaderboardCode.GDLineObjects1.length = 0;
+gdjs.LeaderboardCode.GDLineObjects2.length = 0;
 
 
 return;
