@@ -15,7 +15,7 @@ gdjs.PreloaderCode.GDCopperRedBarObjects1= [];
 gdjs.PreloaderCode.GDCopperRedBarObjects2= [];
 
 
-gdjs.PreloaderCode.userFunc0xf43aa8 = function GDJSInlineCode(runtimeScene) {
+gdjs.PreloaderCode.userFunc0x1029840 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 (function(runtimeScene) {
   // Получаем глобальные переменные
@@ -44,7 +44,7 @@ gdjs.PreloaderCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.PreloaderCode.userFunc0xf43aa8(runtimeScene);
+gdjs.PreloaderCode.userFunc0x1029840(runtimeScene);
 
 }
 

@@ -14,13 +14,13 @@ gdjs.EndScreenCode.GDNewTextObjects2= [];
 
 
 gdjs.EndScreenCode.mapOfGDgdjs_9546EndScreenCode_9546GDMenuButtonObjects1Objects = Hashtable.newFrom({"MenuButton": gdjs.EndScreenCode.GDMenuButtonObjects1});
-gdjs.EndScreenCode.asyncCallback19016476 = function (runtimeScene, asyncObjectsList) {
+gdjs.EndScreenCode.asyncCallback15557492 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.EndScreenCode.localVariables);
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Main", false);
 }
 gdjs.EndScreenCode.localVariables.length = 0;
 }
-gdjs.EndScreenCode.idToCallbackMap.set(19016476, gdjs.EndScreenCode.asyncCallback19016476);
+gdjs.EndScreenCode.idToCallbackMap.set(15557492, gdjs.EndScreenCode.asyncCallback15557492);
 gdjs.EndScreenCode.eventsList0 = function(runtimeScene) {
 
 {
@@ -30,7 +30,7 @@ gdjs.EndScreenCode.eventsList0 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.EndScreenCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.EndScreenCode.asyncCallback19016476(runtimeScene, asyncObjectsList)), 19016476, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.EndScreenCode.asyncCallback15557492(runtimeScene, asyncObjectsList)), 15557492, asyncObjectsList);
 }
 }
 
@@ -55,13 +55,13 @@ gdjs.EndScreenCode.eventsList0(runtimeScene);} //End of subevents
 
 
 };gdjs.EndScreenCode.mapOfGDgdjs_9546EndScreenCode_9546GDRestartButtonObjects1Objects = Hashtable.newFrom({"RestartButton": gdjs.EndScreenCode.GDRestartButtonObjects1});
-gdjs.EndScreenCode.asyncCallback19017548 = function (runtimeScene, asyncObjectsList) {
+gdjs.EndScreenCode.asyncCallback15558564 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.EndScreenCode.localVariables);
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Game", false);
 }
 gdjs.EndScreenCode.localVariables.length = 0;
 }
-gdjs.EndScreenCode.idToCallbackMap.set(19017548, gdjs.EndScreenCode.asyncCallback19017548);
+gdjs.EndScreenCode.idToCallbackMap.set(15558564, gdjs.EndScreenCode.asyncCallback15558564);
 gdjs.EndScreenCode.eventsList2 = function(runtimeScene) {
 
 {
@@ -71,7 +71,7 @@ gdjs.EndScreenCode.eventsList2 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.EndScreenCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.EndScreenCode.asyncCallback19017548(runtimeScene, asyncObjectsList)), 19017548, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.EndScreenCode.asyncCallback15558564(runtimeScene, asyncObjectsList)), 15558564, asyncObjectsList);
 }
 }
 
@@ -96,13 +96,22 @@ gdjs.EndScreenCode.eventsList2(runtimeScene);} //End of subevents
 
 
 };gdjs.EndScreenCode.mapOfGDgdjs_9546EndScreenCode_9546GDVoteButtonObjects1Objects = Hashtable.newFrom({"VoteButton": gdjs.EndScreenCode.GDVoteButtonObjects1});
-gdjs.EndScreenCode.userFunc0xab38a0 = function GDJSInlineCode(runtimeScene) {
+gdjs.EndScreenCode.userFunc0xee9958 = function GDJSInlineCode(runtimeScene) {
 "use strict";
-  var isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
-  if (isMobile) {
-    window.location.href = 'https://best-company-award-2026.testograf.ru/?utm_source=miniapp&utm_medium=mts&utm_term=&utm_content=&utm_campaign=app';
+  const url = 'https://best-company-award-2026.testograf.ru/?utm_source=miniapp&utm_medium=mts&utm_term=&utm_content=&utm_campaign=app';
+
+  // Проверяем, запущена ли игра внутри Telegram
+  if (window.Telegram && window.Telegram.WebApp) {
+    // ✅ Telegram откроет ссылку во внешнем браузере
+    window.Telegram.WebApp.openLink(url);
   } else {
-    window.open('https://best-company-award-2026.testograf.ru/?utm_source=miniapp&utm_medium=mts&utm_term=&utm_content=&utm_campaign=app', '_blank');
+    // ✅ Обычные браузеры
+    const isMobile = /iPhone|iPad|iPod|Android|webOS|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.location.href = url; // на мобиле — просто переход
+    } else {
+      window.open(url, '_blank'); // на ПК — новая вкладка
+    }
   }
 };
 gdjs.EndScreenCode.eventsList4 = function(runtimeScene) {
@@ -110,7 +119,7 @@ gdjs.EndScreenCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.EndScreenCode.userFunc0xab38a0(runtimeScene);
+gdjs.EndScreenCode.userFunc0xee9958(runtimeScene);
 
 }
 
