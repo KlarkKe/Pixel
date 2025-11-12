@@ -166,27 +166,28 @@
 </head>
 <body>
 
-    <script>
-    (function () {
-        if (!window.Telegram  !Telegram.WebApp) {
-            console.warn("⚠️ Telegram WebApp не найден — игра запущена вне Telegram");
-            window.tgData = { uid: "", fname: "" }; // пусто, если не из Telegram
-            return;
-        }
+<script>
+(function () {
+    if (!window.Telegram || !window.Telegram.WebApp) {
+        console.warn("⚠️ Telegram WebApp не найден — игра запущена вне Telegram");
+        window.tgData = { uid: "", fname: "" }; // пусто, если не из Telegram
+        return;
+    }
 
-        const tg = Telegram.WebApp;
-        tg.expand(); // раскрытие окна
+    const tg = window.Telegram.WebApp;
+    tg.expand(); // раскрытие окна
 
-        const user = tg.initDataUnsafe?.user;
+    const user = tg.initDataUnsafe?.user;
 
-        window.tgData = {
-            uid: user?.id ? String(user.id) : "",
-            fname: user?.first_name  ""
-        };
+    window.tgData = {
+        uid: user?.id ? String(user.id) : "",
+        fname: user?.first_name || ""
+    };
 
-        console.log("✅ Telegram init data:", window.tgData);
-    })();
-    </script>
+    console.log("✅ Telegram init data:", window.tgData);
+})();
+</script>
+
 	<script>
 
     (function() {
