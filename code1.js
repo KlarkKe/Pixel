@@ -31,7 +31,7 @@ gdjs.MainCode.GDScoreTextObjects1= [];
 gdjs.MainCode.GDScoreTextObjects2= [];
 
 
-gdjs.MainCode.userFunc0x7d8408 = function GDJSInlineCode(runtimeScene) {
+gdjs.MainCode.userFunc0xdacac0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 (function(runtimeScene) {
   // Получаем глобальные переменные
@@ -50,7 +50,7 @@ gdjs.MainCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.MainCode.userFunc0x7d8408(runtimeScene);
+gdjs.MainCode.userFunc0xdacac0(runtimeScene);
 
 }
 
