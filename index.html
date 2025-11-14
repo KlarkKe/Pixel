@@ -165,10 +165,9 @@
 
 </head>
 <body>
-
-	<script>
+<script>
 (function () {
-    if (!window.Telegram  !window.Telegram.WebApp) {
+    if (!window.Telegram || !window.Telegram.WebApp) {
         console.warn("⚠️ Telegram WebApp не найден — игра запущена вне Telegram");
         window.tgData = { uid: "", fname: "" }; // пусто, если не из Telegram
         return;
@@ -181,12 +180,13 @@
 
     window.tgData = {
         uid: user?.id ? String(user.id) : "",
-        fname: user?.first_name  ""
+        fname: user?.first_name || ""
     };
 
     console.log("✅ Telegram init data:", window.tgData);
 })();
-	</script>
+</script>
+    
 	<script>
 
     (function() {

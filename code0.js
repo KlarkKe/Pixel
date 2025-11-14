@@ -17,7 +17,7 @@ gdjs.PreloaderCode.GDNewShapePainterObjects1= [];
 gdjs.PreloaderCode.GDNewShapePainterObjects2= [];
 
 
-gdjs.PreloaderCode.userFunc0xdaca00 = function GDJSInlineCode(runtimeScene) {
+gdjs.PreloaderCode.userFunc0x1015d30 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 (function(runtimeScene) {
   // Получаем глобальные переменные
@@ -46,7 +46,7 @@ gdjs.PreloaderCode.eventsList0 = function(runtimeScene) {
 {
 
 
-gdjs.PreloaderCode.userFunc0xdaca00(runtimeScene);
+gdjs.PreloaderCode.userFunc0x1015d30(runtimeScene);
 
 }
 

@@ -14,13 +14,13 @@ gdjs.EndScreenCode.GDNewTextObjects2= [];
 
 
 gdjs.EndScreenCode.mapOfGDgdjs_9546EndScreenCode_9546GDMenuButtonObjects1Objects = Hashtable.newFrom({"MenuButton": gdjs.EndScreenCode.GDMenuButtonObjects1});
-gdjs.EndScreenCode.asyncCallback22077812 = function (runtimeScene, asyncObjectsList) {
+gdjs.EndScreenCode.asyncCallback15433524 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.EndScreenCode.localVariables);
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Main", false);
 }
 gdjs.EndScreenCode.localVariables.length = 0;
 }
-gdjs.EndScreenCode.idToCallbackMap.set(22077812, gdjs.EndScreenCode.asyncCallback22077812);
+gdjs.EndScreenCode.idToCallbackMap.set(15433524, gdjs.EndScreenCode.asyncCallback15433524);
 gdjs.EndScreenCode.eventsList0 = function(runtimeScene) {
 
 {
@@ -30,7 +30,7 @@ gdjs.EndScreenCode.eventsList0 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.EndScreenCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.EndScreenCode.asyncCallback22077812(runtimeScene, asyncObjectsList)), 22077812, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.EndScreenCode.asyncCallback15433524(runtimeScene, asyncObjectsList)), 15433524, asyncObjectsList);
 }
 }
 
@@ -55,13 +55,13 @@ gdjs.EndScreenCode.eventsList0(runtimeScene);} //End of subevents
 
 
 };gdjs.EndScreenCode.mapOfGDgdjs_9546EndScreenCode_9546GDRestartButtonObjects1Objects = Hashtable.newFrom({"RestartButton": gdjs.EndScreenCode.GDRestartButtonObjects1});
-gdjs.EndScreenCode.asyncCallback22079116 = function (runtimeScene, asyncObjectsList) {
+gdjs.EndScreenCode.asyncCallback15434596 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.EndScreenCode.localVariables);
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "Game", false);
 }
 gdjs.EndScreenCode.localVariables.length = 0;
 }
-gdjs.EndScreenCode.idToCallbackMap.set(22079116, gdjs.EndScreenCode.asyncCallback22079116);
+gdjs.EndScreenCode.idToCallbackMap.set(15434596, gdjs.EndScreenCode.asyncCallback15434596);
 gdjs.EndScreenCode.eventsList2 = function(runtimeScene) {
 
 {
@@ -71,7 +71,7 @@ gdjs.EndScreenCode.eventsList2 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.EndScreenCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.EndScreenCode.asyncCallback22079116(runtimeScene, asyncObjectsList)), 22079116, asyncObjectsList);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.EndScreenCode.asyncCallback15434596(runtimeScene, asyncObjectsList)), 15434596, asyncObjectsList);
 }
 }
 
@@ -96,7 +96,7 @@ gdjs.EndScreenCode.eventsList2(runtimeScene);} //End of subevents
 
 
 };gdjs.EndScreenCode.mapOfGDgdjs_9546EndScreenCode_9546GDVoteButtonObjects1Objects = Hashtable.newFrom({"VoteButton": gdjs.EndScreenCode.GDVoteButtonObjects1});
-gdjs.EndScreenCode.userFunc0xdaca00 = function GDJSInlineCode(runtimeScene) {
+gdjs.EndScreenCode.userFunc0x103bde8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
   const url = 'https://best-company-award-2026.testograf.ru/?utm_source=miniapp&utm_medium=mts&utm_term=&utm_content=&utm_campaign=app';
 
@@ -119,7 +119,7 @@ gdjs.EndScreenCode.eventsList4 = function(runtimeScene) {
 {
 
 
-gdjs.EndScreenCode.userFunc0xdaca00(runtimeScene);
+gdjs.EndScreenCode.userFunc0x103bde8(runtimeScene);
 
 }
 
